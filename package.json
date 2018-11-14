@@ -1,0 +1,19 @@
+{
+  "name": "idex-exporter",
+  "version": "1.0.0",
+  "description": "Logs all deposits/withdraws from a decentralised exchange",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sleep 10 && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "node-rdkafka": "^2.3.3",
+    "node-zookeeper-client-async": "^1.0.0",
+    "san-exporter": "git+https://github.com/santiment/san-exporter.git",
+    "web3": "^1.0.0-beta.36"
+  }
+}
