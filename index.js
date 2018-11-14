@@ -18,6 +18,7 @@ async function pushData() {
     const events = await getEvents();
     await asyncForEach(events, async (event) => {
         //console.log(event)
+        //event.returnValues contains user address, ERC20 token address and amount exchanged
         await exporter.sendData({
             iso_date: new Date().toISOString(),
             dex_address: event.address,
@@ -25,10 +26,7 @@ async function pushData() {
             blockNumber: event.blockNumber,
             transactionHash: event.transactionHash,
             event: event.event,
-            token: event.returnValues.token,
-            user: event.returnValues.user,
-            amount: event.returnValues.amount,
-            balance: event.returnValues.balance
+            returnValues: event.returnValues
         })
     })
 
