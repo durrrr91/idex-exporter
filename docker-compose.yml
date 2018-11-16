@@ -18,3 +18,5 @@ services:
     environment:
       KAFKA_URL: kafka:9092
       ZOOKEEPER_URL: zookeeper:2181
+    env_file:
+      - .env
